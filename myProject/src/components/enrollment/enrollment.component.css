@@ -1,0 +1,272 @@
+.enrollment-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  background: #fff;
+}
+
+.enrollment-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Heebo', Arial, sans-serif;
+}
+
+.enrollment-form {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs-row {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 2.5rem; /* נשאר 2.5rem כפי שהיה במקור בקובץ זה */
+  margin: auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.input-label {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #000;
+  font-family: 'Heebo', Arial, sans-serif;
+  margin: auto;
+}
+
+.enrollment-input {
+  height: 48px;
+  border: 1.5px solid #000;
+  border-radius: 16px;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  outline: none;
+  font-family: 'Heebo', Arial, sans-serif;
+  background: #fff;
+  transition: border 0.2s;
+}
+
+.enrollment-input:focus {
+  border: 2px solid #000;
+}
+
+.enrollment-btn {
+  margin-top: 1.5rem;
+  width: 350px;
+  height: 48px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Heebo', Arial, sans-serif;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.enrollment-btn:hover {
+  background: #222;
+}
+
+/* Preferences */
+.preferences-layout {
+  display: flex;
+  height: 100vh;
+  width: 90vw;
+  background: #fff;
+  direction: rtl;
+}
+
+.preferences-side-img {
+  width: 38vw;
+  max-width: 450px;
+  background: url('p.jpg') center center/cover no-repeat;
+  height: 100vh;
+}
+
+.preferences-main {
+  flex: 5;
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+/* כפתור "תפריט אחרון" לא קיים בקובץ HTML זה */
+/* אם קיים, נצטרך להוסיף לו את ה-CSS שהיה בקובץ הקודם */
+
+.preferences-title {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-right: 70px;
+  margin-bottom: 2.5rem;
+  font-family: 'Heebo', Arial, sans-serif;
+  color: #222;
+  line-height: 1.5;
+  direction: rtl;
+  text-align: right;
+  margin-left: auto; /* לדחוף לימין ב-RTL */
+}
+
+.preferences-form {
+  margin-right: 5vw;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* מיישר את הגריד והדיב של הכפתור/טקסטבוקס לימין */
+  text-align: right;
+}
+
+.preferences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 2.5rem;
+  /* שינוי: מרווח תחתון קטן כדי להצמיד חזק */
+  margin-bottom: 0.25rem;
+}
+
+/* **חדש/מעודכן: עיצוב לדיב העוטף את הכפתור ותיבת הטקסט בטופס ההעדפות** */
+.form-btn-and-favorite-container {
+  display: flex;
+  justify-content: flex-end; /* הטקסטבוקס משמאל לכפתור ב-RTL */
+  align-items: flex-end; /* מיישר את הטקסטבוקס והכפתור לתחתית הדיב */
+  gap: 5px; /* רווח בין הכפתור לטקסטבוקס */
+  width: 100%;
+  /* שינוי: מרווח עליון קטן כדי להצמיד לגריד */
+  margin-top: 0.25rem;
+}
+
+.preferences-btn {
+  width: 220px;
+  height: 48px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Heebo', Arial, sans-serif;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  letter-spacing: 1px;
+  /* הסרתי align-self: flex-end; מכיוון שהוא מנוהל עכשיו על ידי הדיב העוטף */
+}
+
+.preferences-btn:hover {
+  background: #222;
+}
+
+/* מאכלים אהובים - עיצוב לדיב שמכיל את הכותרת ותיבת הטקסט */
+.favorite-foods {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-grow: 1; /* מאפשר לתיבת הטקסט לתפוס את השטח הנותר */
+  width: auto; /* מאפשר לרוחב להיות גמיש */
+  align-self: flex-end; /* מיישר את הדיב של הטקסטבוקס לתחתית ה-flex container */
+}
+
+.favorite-foods h4 {
+  margin-bottom: 5px;
+  text-align: right;
+  width: 100%;
+}
+
+.favorite-foods textarea {
+  width: 100%;
+  height: 48px;
+  min-height: 48px; /* וודא שלא יקטן מזה */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 1rem;
+  direction: rtl; /* חשוב שהכתיבה בפנים תהיה מימין לשמאל */
+  text-align: right;
+  resize: vertical; /* מאפשר שינוי גובה אנכי בלבד על ידי המשתמש */
+}
+
+/* עיצוב checkbox */
+.pref-checkbox input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.pref-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  min-height: 48px;
+  position: relative;
+}
+
+.checkbox-label-text {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.pref-checkbox .checkbox-label-text::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url('check.jpg') center center/cover no-repeat;
+  border-radius: 8px;
+  border: 2px solid #222;
+  margin-left: 12px;
+  vertical-align: middle;
+  transition: border 0.2s;
+}
+
+.pref-checkbox input[type="checkbox"]:checked + .checkbox-label-text::before {
+  content: "✔";
+  color: #222;
+  font-size: 2rem;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url('check.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ אנימציה מימין לשמאל */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-from-right {
+  opacity: 0;
+  animation: slideInFromRight 0.8s ease forwards;
+}

@@ -1,0 +1,23 @@
+html, body {
+  min-height: 100vh;
+  height: auto; /* חשוב: לא 100% */
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: 'Heebo', sans-serif;
+  direction: rtl;
+  width: 100%;
+  overflow-x: hidden;
+  /* אין overflow-y כאן! */
+}
+
+/* הסר כל display: flex מה-body או html בקבצים אחרים אם יש */
+
+* {
+  border-radius: 16px !important;
+  box-sizing: border-box;
+  font-family: 'Heebo', sans-serif;
+}
+
+/* אין הגבלת גובה או overflow-y שמונעת גלילה */
+/* הדף כולו יוכל להיגלל כרגיל */

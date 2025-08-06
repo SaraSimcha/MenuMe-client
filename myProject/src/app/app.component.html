@@ -1,0 +1,26 @@
+<!-- מסך פתיחה (ENTRY) -->
+<div *ngIf="us.fEntry">
+  <app-entry></app-entry>
+</div>
+<!-- מסך כניסה -->
+<div *ngIf="us.f2">
+  <enter></enter>
+</div>
+<!-- מסך הרשמה -->
+<div *ngIf="us.f1">
+  <enrollment></enrollment>
+</div>
+<!-- מסך ראשי/תפריט אחרי כניסה או הרשמה -->
+<div *ngIf="!us.fEntry && !us.f2 && !us.f1">
+  <app-details-view></app-details-view>
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- לוגו קבוע במסכים (חוץ מהכניסה) -->
+<img 
+  *ngIf="!us.fEntry" 
+  src="./logo1.png" 
+  class="fixed-logo"
+  (click)="goToEntry()"
+  alt="logo">

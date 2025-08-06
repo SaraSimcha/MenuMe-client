@@ -1,0 +1,219 @@
+/* עוטף ראשי */
+.container {
+  max-width: 100%;
+  padding: 2rem;
+  /* הגדלת שוליים פנימיים */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.title-cal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* תיבת קלוריות */
+.calories-box {
+  margin-top: 90px;
+  border: 1px solid black;
+  padding: 0.7rem 8rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 0 5px;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+/* כפתור תפריט חדש */
+.new-menu-btn {
+  margin-left: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.7rem 9.4rem;
+  border-radius: 0 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+.new-menu-btn:hover {
+  opacity: 0.85;
+}
+
+/* כל קומפוננטת ארוחה */
+.meal-container {
+  width: 1480px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 1rem auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  gap: 0.5rem;
+  margin-left: 20px;
+}
+
+/* כותרת אנכית */
+.meal-title-vertical {
+  writing-mode: vertical-rl;
+  font-size: 3rem;
+  font-weight: 180;
+  font-family: 'Heebo', Arial, sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  user-select: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  margin-right: auto;
+}
+
+.meal-title-vertical--orange {
+  color: #f49300;
+}
+
+.meal-title-vertical--green {
+  color: #3fa435;
+}
+
+.meal-title-vertical--purple {
+  color: #9b59b6;
+}
+
+.meal-title-vertical--pink {
+  color: #d24d75;
+}
+
+/* מסגרת לארוחה */
+.meal-box {
+  position: relative;
+  flex-grow: 1;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* יותר דק */
+  padding: 1.5rem;
+  /* יותר שוליים פנימיים */
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+  margin: 0 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 50px;
+}
+
+.meal-box--orange {
+  border-color: #f49300;
+}
+
+.meal-box--green {
+  border-color: #3fa435;
+}
+
+.meal-box--purple {
+  border-color: #9b59b6;
+}
+
+.meal-box--pink {
+  border-color: #d24d75;
+}
+
+/* תכולת המאכלים */
+.meal-content {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  box-sizing: border-box;
+}
+
+.meal-col {
+  flex: 1;
+  min-width: 100px;
+}
+
+.meal-item {
+  padding: 4px 0;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+/* כפתור הלייק */
+.like-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.heart {
+  width: 38px;
+  height: 38px;
+  fill: #ccc;
+  transition: fill 0.3s;
+}
+
+.like-btn.liked .heart {
+  fill: red;
+}
+
+/* טיפול בגלילה אופקית – למנוע */
+body,
+html {
+  overflow-x: hidden;
+}
+
+.menu-title {
+  font-size: 70px;
+  text-align: right;
+  margin-right: 120px;
+  margin-bottom: auto;
+}
+
+.menu-desc {
+  font-size: 30px;
+  text-align: right;
+  margin-right: 20px;
+  margin-right: 120px;
+}
+
+.heart-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+  fill: #ccc;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.heart-btn.liked .heart {
+  fill: #e63946;
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

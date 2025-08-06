@@ -1,0 +1,285 @@
+.enter-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  direction: rtl;
+  background: #fff;
+}
+
+.enter-side-img {
+  width: 28vw;
+  min-width: 450px;
+  background: url('c.jpg') center center/cover no-repeat;
+}
+
+.enter-main {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.enter-form {
+  text-align: right;
+  width: 570px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  justify-content: center;
+  margin-top: 50px;
+  margin-right: 80px;
+}
+
+.enter-title {
+  text-align: right;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  font-family: 'Heebo', Arial, sans-serif;
+  color: #222;
+  line-height: 1.3;
+  direction: rtl;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  text-align: right;
+}
+
+.enter-input {
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid #000;
+  border-radius: 16px;
+  padding: 0 1.2rem;
+  font-size: 1.15rem;
+  outline: none;
+  font-family: 'Heebo', Arial, sans-serif;
+  background: #fff;
+  transition: border 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: right;
+}
+
+.enter-input:focus {
+  border: 2px solid #000;
+}
+
+.enter-btn {
+  width: 100%;
+  height: 48px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Heebo', Arial, sans-serif;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  letter-spacing: 1px;
+}
+
+.enter-btn:hover {
+  background: #222;
+}
+
+/* Preferences */
+.preferences-layout {
+  display: flex;
+  height: 100vh;
+  width: 90vw;
+  background: #fff;
+  direction: rtl;
+}
+
+.preferences-side-img {
+  width: 38vw;
+  max-width: 450px;
+  background: url('p.jpg') center center/cover no-repeat;
+  height: 100vh;
+}
+
+.preferences-main {
+  flex: 5;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+.last-menu-btn {
+  background: #888;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  margin-left: auto; /* דוחף לימין ב-RTL */
+  margin-right: 70px;
+}
+
+.preferences-title {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-right: 70px;
+  margin-bottom: 2.5rem;
+  font-family: 'Heebo', Arial, sans-serif;
+  color: #222;
+  line-height: 1.5;
+  direction: rtl;
+  text-align: right;
+  margin-left: auto; /* דוחף לימין ב-RTL */
+}
+
+.preferences-form {
+  margin-right: 5vw;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* מיישר את הגריד והדיב של הכפתור/טקסטבוקס לימין */
+  text-align: right;
+}
+
+.preferences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 2.5rem;
+  /* שינוי עיקרי: הקטנת המרווח התחתון של הגריד */
+  margin-bottom: 0.25rem; /* מרווח קטן מאוד */
+}
+
+.form-btn-and-favorite-container {
+  display: flex;
+  justify-content: flex-end; /* הטקסטבוקס משמאל לכפתור ב-RTL */
+  align-items: flex-end;
+  gap: 5px; /* שינוי: הקטנתי עוד את הרווח בין הכפתור לטקסטבוקס */
+  width: 100%;
+  /* שינוי עיקרי: הקטנת המרווח העליון של הדיב */
+  margin-top: 0.25rem; /* מרווח קטן מאוד */
+}
+
+.preferences-btn {
+  width: 220px;
+  height: 48px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Heebo', Arial, sans-serif;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  letter-spacing: 1px;
+}
+
+.preferences-btn:hover {
+  background: #222;
+}
+
+.favorite-foods {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-grow: 1;
+  width: auto;
+  align-self: flex-end;
+}
+
+.favorite-foods h4 {
+  margin-bottom: 5px;
+  text-align: right;
+  width: 100%;
+}
+
+.favorite-foods textarea {
+  width: 100%;
+  height: 48px;
+  min-height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 1rem;
+  direction: rtl;
+  text-align: right;
+  resize: vertical;
+}
+
+/* עיצוב checkbox */
+.pref-checkbox input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.pref-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  min-height: 48px;
+  position: relative;
+}
+
+.checkbox-label-text {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.pref-checkbox .checkbox-label-text::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url('check.jpg') center center/cover no-repeat;
+  border-radius: 8px;
+  border: 2px solid #222;
+  margin-left: 12px;
+  vertical-align: middle;
+  transition: border 0.2s;
+}
+
+.pref-checkbox input[type="checkbox"]:checked + .checkbox-label-text::before {
+  content: "✔";
+  color: #222;
+  font-size: 2rem;
+  background:
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url('check.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ אנימציה מימין לשמאל */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-from-right {
+  opacity: 0;
+  animation: slideInFromRight 0.8s ease forwards;
+}

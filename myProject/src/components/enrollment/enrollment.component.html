@@ -1,0 +1,102 @@
+<div *ngIf="showCredentials" class="enrollment-container slide-in">
+  <h1 class="enrollment-title animate-from-right" style="animation-delay: 0.2s;">
+    כדי שנתאים לך תפריט אישי, נשמח שתמלא כמה פרטים, אז נתחיל?
+  </h1>
+  <form class="enrollment-form animate-from-right" (ngSubmit)="AddUser()">
+    <div class="inputs-row" style="margin-bottom: 30px;">
+      <div class="input-group" style="animation-delay: 0.4s;">
+        <label class="input-label">כאן תכתוב שם שישמש לך פרופיל אישי באתר</label>
+        <input type="text" class="enrollment-input" placeholder="שם משתמש" [(ngModel)]="us.user.UserName"
+          name="username" required />
+      </div>
+      <div class="input-group" style="animation-delay: 0.6s;">
+        <label class="input-label">כאן תכתוב סיסמא שתשמש אותך לכניסה לאתר</label>
+        <input type="password" class="enrollment-input" placeholder="סיסמה" [(ngModel)]="us.user.Password"
+          name="password" required />
+      </div>
+    </div>
+    <button class="enrollment-btn" type="submit" style="animation-delay: 0.8s;">המשך</button>
+  </form>
+</div>
+
+<div *ngIf="showDetails" class="enrollment-container slide-in">
+  <h1 class="enrollment-title animate-from-right" style="animation-delay: 0.2s;">
+    מצוין! עכשיו נמלא פרטים שיעזרו לנו לחשב את הצרכים שלך:
+  </h1>
+  <form class="enrollment-form animate-from-right" (ngSubmit)="SubmitDetails()">
+    <div class="inputs-row">
+      <div class="input-group" style="animation-delay: 0.4s;">
+        <label class="input-label">מין</label>
+        <select class="enrollment-input" [(ngModel)]="us.fullUser.Gender" name="gender" required>
+          <option value="">בחר מין</option>
+          <option value="male">זכר</option>
+          <option value="female">נקבה</option>
+        </select>
+      </div>
+      <div class="input-group" style="animation-delay: 0.6s;">
+        <label class="input-label">משקל (ק"ג)</label>
+        <input type="number" class="enrollment-input" placeholder="משקל" [(ngModel)]="us.fullUser.Details[1]"
+          name="weight" required />
+      </div>
+    </div>
+
+    <div class="inputs-row">
+      <div class="input-group" style="animation-delay: 0.8s;">
+        <label class="input-label">גובה (ס"מ)</label>
+        <input type="number" class="enrollment-input" placeholder="גובה" [(ngModel)]="us.fullUser.Details[2]"
+          name="height" required />
+      </div>
+
+
+      <div class="input-group" style="animation-delay: 1s;">
+        <label class="input-label">גיל</label>
+        <input type="number" class="enrollment-input" placeholder="גיל" [(ngModel)]="us.fullUser.Details[3]" name="age"
+          required />
+      </div>
+    </div>
+
+    <div class="input-group" style="width: 750px; margin-bottom: 2rem; animation-delay: 1.2s;">
+      <label class="input-label">רמת פעילות גופנית</label>
+      <select class="enrollment-input" [(ngModel)]="us.fullUser.Activity" name="activity" required>
+        <option value="">בחר רמת פעילות</option>
+        <option value="1">נמוכה</option>
+        <option value="2">בינונית</option>
+        <option value="3">גבוהה</option>
+        <option value="4">עצימה</option>
+        <option value="5">עצימה מאוד</option>
+      </select>
+    </div>
+
+    <button class="enrollment-btn" type="submit" style="animation-delay: 1.4s;">המשך</button>
+  </form>
+</div>
+
+<div class="preferences-layout" *ngIf="showPreferences">
+  <div class="preferences-side-img"></div>
+  <div class="preferences-main">
+    <h1 class="preferences-title animate-from-right" style="animation-delay: 0.4s">
+      כעת תוכל לבחור את ההעדפות שלך,<br>
+      ולפי זה נוכל לבנות לך תפריט אישי
+    </h1>
+    <form class="preferences-form animate-from-right" style="animation-delay: 0.6s" (ngSubmit)="AddFullUser()">
+      <div class="preferences-grid animate-from-right" style="animation-delay: 0.8s">
+        <div class="pref-checkbox" *ngFor="let label of preferenceLabels; let i = index">
+          <label>
+            <input type="checkbox" [checked]="us.halfUser.Prefer[i] === 1" (change)="onPreferenceChange($event, i)" />
+            <span class="checkbox-label-text">{{ label }}</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-btn-and-favorite-container">
+        <div class="favorite-foods">
+          <h4>כאן תוכל לכתוב מאכלים האהובים עליך, ואולי הם ישתלבו בתפריט!</h4>
+          <textarea placeholder="שים פסיק בין שמות המאכלים" [(ngModel)]="favorite"
+            style="min-height: 48px; height: 48px;"></textarea>
+        </div>
+        <button class="preferences-btn animate-from-right" style="animation-delay: 1s" type="submit">
+          לקבלת התפריט
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

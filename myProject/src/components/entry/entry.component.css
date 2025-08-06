@@ -1,0 +1,127 @@
+.start-screen {
+  background-position: center; /* מרכז את התמונה */
+  background-image: url("b.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  direction: rtl;
+  position: relative;
+}
+
+.overlay {
+  direction: ltr;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(59, 58, 58, 0.943) 8%, transparent 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 5%;
+}
+
+.content {
+  max-width: 600px;
+  color: white;
+  text-align: right;
+  animation: slideInFromRight 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 4rem; /* מוסיף ריווח מהימין */
+}
+
+.logo {
+  width: 400px;
+  height: 200px;
+  object-fit: contain;
+  margin-top: 40px;
+  display: block;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+}
+
+.title {
+  font-size: 5.5rem;
+  margin-bottom: 0rem;
+  line-height: 1.2;
+  font-weight: bold;
+  font-weight: 550; /* יותר דק */
+  white-space: nowrap;     /* לא ירד שורה */
+  overflow: hidden;        /* לא יגלוש */
+  text-overflow: ellipsis; /* שלוש נקודות אם אין מקום */
+}
+
+.subtitle {
+  direction: rtl;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 200; /* יותר דק */
+  white-space: nowrap;     /* לא ירד שורה */
+  overflow: hidden;        /* לא יגלוש */
+  text-overflow: ellipsis; /* שלוש נקודות אם אין מקום */
+}
+
+.buttons {
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  border-radius: 16px !important;
+  box-sizing: border-box;
+}
+
+.btn {
+  background: white;
+  color: black;
+  padding: 0rem 4.2rem; /* יותר צר */
+  border: none;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.btn:hover {
+  background: #e0e0e0;
+  color: #222;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-from-right {
+  opacity: 0;
+  animation: slideInFromRight 0.8s ease forwards;
+}

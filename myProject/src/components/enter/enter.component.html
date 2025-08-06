@@ -1,0 +1,55 @@
+<div class="enter-layout" *ngIf="!showPreferences">
+  <div class="enter-side-img"></div>
+  <div class="enter-main">
+    <form class="enter-form" (ngSubmit)="EnterUser()">
+      <h1 class="enter-title animate-from-right" style="animation-delay: 0.2s">
+        שלום משתמש יקר! נא הזן<br> שם משתמש וסיסמא
+      </h1>
+      <div class="input-group animate-from-right" style="animation-delay: 0.4s">
+        <input type="text" class="enter-input" placeholder="שם משתמש" [(ngModel)]="us.user.UserName" name="username"
+          required />
+      </div>
+      <div class="input-group animate-from-right" style="animation-delay: 0.6s">
+        <input type="password" class="enter-input" placeholder="סיסמא" [(ngModel)]="us.user.Password" name="password"
+          required />
+      </div>
+      <button class="enter-btn animate-from-right" style="animation-delay: 0.8s" type="submit">
+        להמשך
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="preferences-layout" *ngIf="showPreferences">
+  <div class="preferences-side-img"></div>
+  <div class="preferences-main">
+    <button class="last-menu-btn animate-from-right" style="animation-delay: 0.2s" (click)="LessMenu()">
+      התפריט האחרון שלך 🍽
+    </button>
+    <h1 class="preferences-title animate-from-right" style="animation-delay: 0.4s">
+      כעת תוכל לבחור את ההעדפות שלך,<br>
+      ולפי זה נוכל לבנות לך תפריט אישי
+    </h1>
+    <form class="preferences-form animate-from-right" style="animation-delay: 0.6s" (ngSubmit)="EnterPrefer()">
+      <div class="preferences-grid animate-from-right" style="animation-delay: 0.8s">
+        <div class="pref-checkbox" *ngFor="let label of preferenceLabels; let i = index">
+          <label>
+            <input type="checkbox" [checked]="us.halfUser.Prefer[i] === 1" (change)="onPreferenceChange($event, i)" />
+            <span class="checkbox-label-text">{{ label }}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-btn-and-favorite-container">
+        <div class="favorite-foods">
+          <h4>כאן תוכל לכתוב מאכלים האהובים עליך, ואולי הם ישתלבו בתפריט!</h4>
+          <textarea placeholder="שים פסיק בין שמות המאכלים" [(ngModel)]="favorite" name="favorite" style="min-height: 48px; height: 48px;"></textarea>
+        </div>
+
+        <button class="preferences-btn animate-from-right" style="animation-delay: 1s" type="submit">
+          לקבלת התפריט
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
